@@ -8,6 +8,12 @@ dnl required versions of gstreamer and plugins-base
 GST_REQUIRED=1.0.0
 GSTPB_REQUIRED=1.0.0
 
+AC_ARG_WITH([badsourcedir],
+  [AS_HELP_STRING([--with-badsourcedir=DIR], [Directory with gst-plugins-bad source])],
+  [badsourcedir=$withval],
+  [badsourcedir="$(pwd)/gst-plugins-bad/"])
+AC_SUBST([badsourcedir], [$badsourcedir])
+
 AC_CONFIG_SRCDIR([src/gstplugin.c])
 AC_CONFIG_HEADERS([config.h])
 

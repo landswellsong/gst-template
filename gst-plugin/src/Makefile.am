@@ -17,7 +17,7 @@ plugin_LTLIBRARIES = libgstplugin.la
 libgstplugin_la_SOURCES = gstplugin.c gstplugin.h
 
 # compiler and linker flags used to compile this plugin, set in configure.ac
-libgstplugin_la_CFLAGS = $(GST_CFLAGS)
+libgstplugin_la_CFLAGS = $(GST_CFLAGS) -I@badsourcedir@/ext/gl/
 libgstplugin_la_LIBADD = $(GST_LIBS)
 libgstplugin_la_LDFLAGS = $(GST_PLUGIN_LDFLAGS)
 libgstplugin_la_LIBTOOLFLAGS = --tag=disable-static

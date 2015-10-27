@@ -64,6 +64,8 @@
 
 #include "gstplugin.h"
 
+#include "gstglmixer.h"
+
 GST_DEBUG_CATEGORY_STATIC (gst_plugin_template_debug);
 #define GST_CAT_DEFAULT gst_plugin_template_debug
 
@@ -254,7 +256,7 @@ plugin_init (GstPlugin * plugin)
    */
   GST_DEBUG_CATEGORY_INIT (gst_plugin_template_debug, "plugin",
       0, "Template plugin");
-
+	 gst_gl_mixer_get_type();
   return gst_element_register (plugin, "plugin", GST_RANK_NONE,
       GST_TYPE_PLUGIN_TEMPLATE);
 }
